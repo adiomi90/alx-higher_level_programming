@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * insert_node - Insert into a sorted linked llist
+ * insert_node - Insert into the  sorted linked llist
  * @head: pointer the head list
  * @number: number to insert
  * Return: address null or result

@@ -1,50 +1,32 @@
 #include "lists.h"
 
 /**
- * is_palindrome - checks  a palindrome.
- * @head: start
- * 
- * Return: 0 if not a palindrome, else return 1.
+ * is_palindrome - Checks if a singly linked list is a palindrome.
+ * @head: Head of the list
+ * Return: 0 if it is not a palindrome, 1 if it is a palindrome
  */
-
 int is_palindrome(listint_t **head)
 {
-	listint_t *slow = *head, *fast = *head, *node, *prev;
-	int failed = 0;
+int list[1000000];
+long move = 1, i;
+listint_t *forward;
 
-	while (fast != NULL && fast->next != NULL)
+	if (head == NULL)
+		return (1);
+	if (*head == NULL)
+		return (1);
+	if ((*head)->next == NULL)
+		return (1);
+
+	forward = *head, move = 0;
+	while (forward != NULL)
+		list[move] = forward->n, forward = forward->next, move++;
+
+	for (i = 0; i < (move / 2); i++)
 	{
-		fast = fast->next->next;
-		slow = slow->next;
+		if (list[i] != list[move - i - 1])
+			return (0);
 	}
-	node = slow;
-	prev = NULL;
-	while (node)
-	{
-		fast = node->next;
-		node->next = prev;
-		prev = node;
-		node = fast;
-	}
-	fast = *head;
-	node = prev;
-	while (prev)
-	{
-		if (fast->n != prev->n)
-		{
-			failed = 1;
-			break;
-		}
-		fast = fast->next;
-		prev = prev->next;
-	}
-	prev = NULL;
-	while (node)
-	{
-		fast = node->next;
-		node->next = prev;
-		prev = node;
-		node = fast;
-	}
-	return (!failed);
+
+	return (1);
 }

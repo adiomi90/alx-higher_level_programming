@@ -8,8 +8,8 @@
 int is_palindrome(listint_t **head)
 {
 int list[1000000];
-long move = 1, i;
-listint_t *forward;
+long go = 1, i;
+listint_t *forw;
 
 	if (head == NULL)
 		return (1);
@@ -18,13 +18,13 @@ listint_t *forward;
 	if ((*head)->next == NULL)
 		return (1);
 
-	forward = *head, move = 0;
-	while (forward != NULL)
-		list[move] = forward->n, forward = forward->next, move++;
+	forw = *head, go = 0;
+	while (forw != NULL)
+		list[go] = forw->n, forw = forw->next, go++;
 
-	for (i = 0; i < (move / 2); i++)
+	for (i = 0; i < (go / 2); i++)
 	{
-		if (list[i] != list[move - i - 1])
+		if (list[i] != list[go - i - 1])
 			return (0);
 	}
 

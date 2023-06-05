@@ -4,4 +4,4 @@
 
 class Rectange:
     """This class is an empty class""""
-    passs
+    pass

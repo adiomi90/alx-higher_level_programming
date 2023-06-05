@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-"""This is a rectange class"""
+"""This is a Rectangle class"""
 
 
-
-class Rectange:
-    """This class is an empty class"""
+class Rectangle:
+    """This class has no content"""
     pass

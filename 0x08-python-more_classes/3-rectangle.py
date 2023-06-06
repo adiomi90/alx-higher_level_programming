@@ -58,4 +58,4 @@ class Rectangle:
                 for j in range(self.__width):
                     string_rep = "#"
                 string_rep += "\n"
-            return new_str
+            return new_str[:-1]

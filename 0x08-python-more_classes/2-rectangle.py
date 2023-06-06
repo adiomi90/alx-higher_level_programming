@@ -1,22 +1,25 @@
 #!/usr/bin/python3
 """Calculate the area of a rectangle"""
 
+
 class Rectangle:
     """Define the rectangle"""
 
-    def __init__(self, width=0, heigth=0):
+
+    def __init__(self, width=0, height=0):
         """"Initilaize the rectangle.
         Args:
-            heigth (int): height of the rectangle
+            height (int): height of the rectangle
             width (int): width of the rectangle
         """
         self.width = width
-        self.heigth = heigth
+        self.height = height
 
     @property
     def width(self):
         """defines the width"""
         return self.__width
+
 
     @width.setter
     def width(self, value):
@@ -27,15 +30,17 @@ class Rectangle:
         self.__width = value
 
     @property
-    def heigth(self):
+    def height(self):
         """defines a height"""
-        return self.__heigth
+        return self.__height
 
-    @heigth(self, value):
+
+    @height(self, value):
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("heigth must be >= 0")
+            raise ValueError("height must be >= 0")
+        self.__height = value
 
     def area(self):
         """calculates the area"""

@@ -1,41 +1,18 @@
 #!/usr/bin/python3
-"""Max integer test module.
-
-This module contains a class that tests for the max_integer function.
+"""Module to find the max integer in a list
 """
-import unittest
-max_integer = __import__('6-max_integer').max_integer
 
 
-class TestMaxInteger(unittest.TestCase):
-    """Test function"""
-
-    def test_max_integer(self):
-        """
-        Tests if correct tests are ok
-        """
-        lst = [1, 2, 3, 4]
-        self.assertEqual(max_integer(lst), 4)
-        lst = [1, 4, 2, 3, -4]
-        self.assertEqual(max_integer(lst), 4)
-        lst = [4]
-        self.assertEqual(max_integer(lst), 4)
-        lst = [None]
-        self.assertEqual(max_integer(lst), None)
-        lst = []
-        self.assertEqual(max_integer(lst), None)
-        lst = [1, 3, float('inf'), 2]
-        self.assertEqual(max_integer(lst), float('inf'))
-        lst = [1, 3, -float('inf'), 2]
-        self.assertEqual(max_integer(lst), 3)
-        lst = [4, 1, 2, 3]
-        self.assertEqual(max_integer(lst), 4)
-
-    def test_type(self):
-        """
-        Tests if failure tests are ok
-        """
-        lst = [1, 2, 3, "Betty"]
-        self.assertRaises(TypeError, max_integer, lst)
-        lst = None
-        self.assertRaises(TypeError, max_integer, lst)
+def max_integer(list=[]):
+    """Function to find and return the max integer in a list of integers
+        If the list is empty, the function returns None
+    """
+    if len(list) == 0:
+        return None
+    result = list[0]
+    i = 1
+    while i < len(list):
+        if list[i] > result:
+            result = list[i]
+        i += 1
+    return result

@@ -4,6 +4,6 @@
 
 def is_kind_of_class(obj_test, a_class):
     """checks if the object is an instance
-       of the class 
+       of the class
     """
     return isinstance(obj_test, a_class)

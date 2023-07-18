@@ -1,3 +1,3 @@
 -- list all the values of the table
 
-SELECT * from first_table;
+SELECT * FROM first_table;

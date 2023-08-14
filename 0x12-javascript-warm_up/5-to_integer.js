@@ -1,6 +1,7 @@
 #!/usr/bin/node
 
 // Prints a number
+
 const myInt = parseInt(process.argv[2]);
 
 if (myInt) {

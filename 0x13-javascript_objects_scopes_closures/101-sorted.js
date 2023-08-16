@@ -12,4 +12,4 @@ for (const key in inputDictionary) {
     }
   }
 }
-console.log(outDict)
+console.log(outputDictionary)

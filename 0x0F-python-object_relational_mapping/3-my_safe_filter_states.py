@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Takes in an argument and displays base on sql injection"""
+"""Takes in an argument and displays safe from sql injection"""
 
 import MySQLdb
 import sys

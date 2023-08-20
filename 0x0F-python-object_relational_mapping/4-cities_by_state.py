@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+!/usr/bin/python3
+"""Lists all cities"""
 
 import sys
 import MySQLdb

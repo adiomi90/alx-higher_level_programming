@@ -1,15 +1,16 @@
 #!/usr/bin/python3
+"""Lists all states from the database hbtn_0e_0_usa"""
 
-if __name == "__main__":
+if __name__ == '__main__':
+
     import MySQLdb
     import sys
 
-    db_connection = MySQLdb.connect(host="localhost", port=3306,
-            username=sys.argv[1], password=sys.argv[2],
-            db=sys.argv[3])
-    my_database = db_connection.cursor()
-    my_database.execute("SELECT * FROM states ORDER BY states.id ASC;")
+    db = MySQLdb.connect(host="localhost", port=3306,
+                         user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
 
-    output = my_database.fetchall()
-    for row in output:
-        print(output)
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states ORDER BY states.id ASC;")
+    rows = cur.fetchall()
+    for r in rows:
+        print(r)

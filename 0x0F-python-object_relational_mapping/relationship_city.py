@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""relationship city"""
+'''task 15 model script'''
 
 from sqlalchemy.orm import relationship
 from relationship_state import Base

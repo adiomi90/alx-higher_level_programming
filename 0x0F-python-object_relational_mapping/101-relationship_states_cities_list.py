@@ -1,35 +1,18 @@
 #!/usr/bin/python3
-"""
-use table relationship to access and print city and state
-parameters given to script: username, password, database
-"""
+'''task 15 db tables classes'''
 
-from sys import argv
-from relationship_state import Base, State
-from relationship_city import City
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from sqlalchmey.orm import relationship
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import relationship
+
+Base = declarative_base()
 
 
-if __name__ == "__main__":
-
-    # make engine for database
-    user = argv[1]
-    passwd = argv[2]
-    db = argv[3]
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
-                           format(user, passwd, db), pool_pre_ping=True)
-    Base.metadata.create_all(engine)
-    Session = sessionmaker(bind=engine)
-    session = Session()
-
-    # use table relationship to access and print city and state
-    rows = session.query(State).order_by(State.id).all()
-    for state in rows:
-        print(state.id, state.name, sep=": ")
-        for city in state.cities:
-            print("   ",end="")
-            print(state.id, city.name, sep=": ")
-
-    session.close()
+class State(Base):
+    '''state class for the state table'''
+    __tablename__ = "states"
+    id = Column(Integer, primary_key=True, nullable=False,
+                autoincrement=True, unique=True)
+    name = Column(String(128), nullable=False)
+    cities = relationship('City', back_populates='state',
+                          cascade='all, delete, delete-orphan')

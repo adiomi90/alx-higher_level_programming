@@ -1,18 +1,20 @@
 #!/usr/bin/python3
-'''task 15 db tables classes'''
-
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String
+""" prints the State object with the name passed as argument from the database
+"""
+import sys
+from relationship_state import Base, State
+from relationship_city import City
+from sqlalchemy import (create_engine)
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import relationship
-
-Base = declarative_base()
-
-
-class State(Base):
-    '''state class for the state table'''
-    __tablename__ = "states"
-    id = Column(Integer, primary_key=True, nullable=False,
-                autoincrement=True, unique=True)
-    name = Column(String(128), nullable=False)
-    cities = relationship('City', back_populates='state',
-                          cascade='all, delete, delete-orphan')
+if __name__ == "__main__":
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+    Base.metadata.create_all(engine)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    for instance in session.query(State).order_by(State.id):
+        print(instance.id, instance.name, sep=": ")
+        for city_instance in instance.cities:
+            print("    ", end="")
+            print(city_instance.id, city_instance.name, sep=": ")

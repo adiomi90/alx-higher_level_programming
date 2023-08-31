@@ -1,4 +1,4 @@
 #!/bin/bash
-#this script takes in a rul, and displace the body size
+#this script takes url andshows the body size
 
-curl -sI "$1 | greo Content-Length | cut -d ' ' -f 2
+curl -sI "$1" | grep Content-Length | cut -d ' ' -f 2

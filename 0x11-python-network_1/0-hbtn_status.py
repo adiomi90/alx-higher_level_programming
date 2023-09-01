@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-""" This script fetches https://alx-intranet.hbtn.io/status """
+""" Fetch content from https://alx-intranet.hbtn.io/status """
 
 from urllib.request import urlopen, Request
 
+
 def make_request():
-    request = Request('https://alx-intranet.hbtn.io/status')
-    with urlopen(request) as response:
+    req = Request('https://alx-intranet.hbtn.io/status')
+    with urlopen(req) as response:
         content = response.read()
 
     print("Body response:")
@@ -13,5 +14,6 @@ def make_request():
     print(f"\t- content: {content}")
     print(f"\t- utf8 content: {content.decode('utf-8')}")
 
-if __name__ = '__main__':
+
+if __name__ == '__main__':
     make_request()

@@ -2,7 +2,7 @@
 """
 Python script that fetches an URL with requests package
 """
-import requets
+import requests
 
 
 def make_request():

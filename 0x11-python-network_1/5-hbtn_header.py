@@ -7,13 +7,9 @@ import requests
 import sys
 
 
-def make_request():
+if __name__ == "__main__":
     try:
-        req = requests.get(sys.argv[1])
-        print(req.headers['X-Request-Id'])
+        r = requests.get(sys.argv[1])
+        print(r.headers['X-Request-Id'])
     except:
         pass
-
-
-if __name__ == '__main__':
-    make_request()

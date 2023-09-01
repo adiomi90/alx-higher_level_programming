@@ -9,7 +9,7 @@ def make_request():
     request = requests.get('https://alx-intranet.hbtn.io/status')
     text = request.text
     print("Body response:")
-    print(f"\t- type: {request}")
+    print(f"\t- type: {type(request)}")
     print(f"\t- content: {text}")
 
 

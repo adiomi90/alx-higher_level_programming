@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" This script take in url and displays the value
+"""
+This script take in url and displays the value
     of X-Request_Id variable found in header
 """
 import urllib.request

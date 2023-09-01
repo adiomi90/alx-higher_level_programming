@@ -9,8 +9,8 @@ def make_request():
     request = requests.get('https://alx-intranet.hbtn.io/status')
     text = request.text
     print("Body response:")
-    print("\n\t- type: {request}")
-    print("\n\t- content: {text}")
+    print("\t- type: {request}")
+    print("\t- content: {text}")
 
 
 if __name__ == "__main__":

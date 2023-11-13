@@ -4,6 +4,8 @@
 
 const multiLan = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
-for (let i = 0; i < mult_lan.length; i++) {
+let i = 0;
+while (i < multiLan.length) {
   console.log(multiLan[i]);
+  i++;
 }

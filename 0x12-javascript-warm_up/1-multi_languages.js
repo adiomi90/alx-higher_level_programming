@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//Script that print multi lines
+// Script that print multi lines
 
 console.log('C is fun')
 console.log('Python is cool')

@@ -2,10 +2,8 @@
 
 // print an array of strings
 
-const multi_lan = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+const multiLan = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
-const i = 0;
-while (i < multi_lan.length) {
-  console.log(multi_lan[i]);
-  i++;
+for (let i = 0; i < mult_lan.length; i++) {
+  console.log(multiLan[i]);
 }

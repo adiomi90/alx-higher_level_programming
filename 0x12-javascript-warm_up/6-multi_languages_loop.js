@@ -4,8 +4,8 @@
 
 const multi_lan = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
-
-while (let i = 0 < multi_lan.length) {
+let i = 0;
+while (i < multi_lan.length) {
   console.log(multi_lan[i]);
   i++;
 }

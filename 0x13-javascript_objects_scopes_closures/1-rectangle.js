@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-//class rectangle with width and height
+// class rectangle with width and height
 
 
 class Rectangle {

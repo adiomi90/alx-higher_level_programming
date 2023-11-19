@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+"""Lists all cities from the database"""
 
-"""The script list all cities from the database"""
+import sys
+import MySQLdb
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 
     db = MySQLdb.connect(host="localhost", port=3306,
                          user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
@@ -14,4 +16,4 @@ if __name__ == "__main__":
                 ORDER BY cities.id ASC")
     rows = cur.fetchall()
     for row in rows:
-        print(row)
+        print(row))

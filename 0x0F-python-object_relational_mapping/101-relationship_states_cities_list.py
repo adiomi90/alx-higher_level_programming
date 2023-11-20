@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-"""
- Prints the state as argument
-"""
+""" Prints the state as argument"""
+
 import sys
 from relationship_state import Base, State
 from relationship_city import City
-from sqlalchemy import (create_engine)
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import relationship
 
@@ -19,6 +18,6 @@ if __name__ == "__main__":
     states = session.query(State).order_by(State.id)
     for state in states:
         print(state.id, state.name, sep=": ")
-        for city  in state.cities:
+        for city in state.cities:
             print("    ", end="")
             print(city.id, city.name, sep=": ")

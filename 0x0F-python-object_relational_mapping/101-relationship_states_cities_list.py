@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 
+"""
  Prints the state as argument
 """
 import sys

@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""DEfines a function that finds the peak in a list of unsroted numbers"""
+"""DEfines a function that finds the peak in unsorted integers"""
 
 
 def find_peak(list_of_integers):
-    """
+    """Finds the peak in a list of unsorted integers
     Args:
         list_of_integer(list): Unsorted list
     Returns:
@@ -20,7 +20,7 @@ def find_peak(list_of_integers):
 
     if length == 2:
         return max(list_of_integers)
-    
+
     list_of_integers.sort(reverse=True)
 
     return list_of_integers[0]

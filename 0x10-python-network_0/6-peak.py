@@ -1,17 +1,19 @@
 #!/usr/bin/python3
 
 def find_peak(list_of_integers):
-    """ Args:
-           list_of_integer(list): Unsorted list
-        Returns:
-            int: The peak of the unsorted list
+    """
+    Args:
+        list_of_integer(list): Unsorted list
+    Returns:
+        int: The peak of the unsorted list
     """
 
     length = len(list_of_integers)
 
-    if length == 0:
+    if not list_of_integers:
         return None
-    elif length == 1:
+
+    if length == 1:
         return list_of_integers[0]
 
     peak = list_of_integers[0]

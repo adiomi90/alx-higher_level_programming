@@ -1,9 +1,5 @@
 #!/usr/bin/python3
 
-""" A python script that finds the peak in a list of
-    unsorted integers
-"""
-
 def find_peak(list_of_integers):
     """ Args:
            list_of_integer(list): Unsorted list
@@ -13,10 +9,9 @@ def find_peak(list_of_integers):
 
     length = len(list_of_integers)
 
-    if not list_of_integers:
+    if length == 0:
         return None
-    
-    if length == 1:
+    elif length == 1:
         return list_of_integers[0]
 
     peak = list_of_integers[0]

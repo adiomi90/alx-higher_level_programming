@@ -1,4 +1,4 @@
 #!/bin/bash
-# this cript sends a get request to the url and display body response
+# Takes URL get request and display body response
 
-curl -sL '$1'
+curl -Ls '$1'

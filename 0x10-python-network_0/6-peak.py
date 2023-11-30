@@ -1,0 +1,28 @@
+#!/usr/bin/python3
+
+""" A python script that finds the peak in a list of
+    unsorted integers
+"""
+
+def find_peak(list_of_integers):
+    """ Args:
+           list_of_integer(list): Unsorted list
+        Returns:
+            int: The peak of the unsorted list
+    """
+
+    length = len(list_of_integers)
+
+    if not list_of_integers:
+        return None
+    
+    if length == 1:
+        return list_of_integers[0]
+
+    peak = list_of_integers[0]
+
+    for i in range(1, length):
+        if list_of_integers[i] > peak:
+            peak = list_of_integers[i]
+
+    return peak

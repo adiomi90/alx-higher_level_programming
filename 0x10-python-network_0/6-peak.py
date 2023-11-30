@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""DEfines a function that finds the peak in a list of unsroted numbers"""
+
 
 def find_peak(list_of_integers):
     """

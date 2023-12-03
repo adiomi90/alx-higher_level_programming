@@ -16,8 +16,7 @@ def post_request_url(url, email):
         data = parse.urlencode(values).encode("ascii")
         request = Request(url, data, headers={'User-Agent': 'Mozilla/5.0'})
         with urlopen(request) as response:
-            content = response.read()
-            content.decode("utf-8")
+            content = response.read().decode("utf-8")
         return content
 
     except Exception as e:

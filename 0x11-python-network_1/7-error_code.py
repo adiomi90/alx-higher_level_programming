@@ -22,7 +22,7 @@ def main():
     url = argv[1]
     request = get_request(url)
 
-     if request.status_code >= 400:
+    if request.status_code >= 400:
          print(f"Error code: {request.status_code}")
     else:
          print(request.text)

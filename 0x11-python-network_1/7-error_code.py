@@ -27,3 +27,7 @@ def main():
             print(f"Error code: {request.status_code}")
         else:
             print(request.text)
+
+
+if __name__ == "__main__":
+    main()

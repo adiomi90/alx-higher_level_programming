@@ -1,34 +1,25 @@
 #!/usr/bin/python3
 """
-    A python scipt that uses the requests packaage
-    sends a requewst to the URL and display body
-    response
+    A Python script that uses the requests package
+    sends a request to the URL and displays the body response
 """
-
-from sys import argv
-from requests import get, exceptions
-
-
-def get_request(url):
-    try:
-        response = get(url)
-        response.raise_for_status()
-        return response
-    except exceptions.RequestException as e:
-        print(f"Error: {e}")
-        return None
-
+import sys
+import requests
 
 def main():
-    url = argv[1]
-    request = get_request(url)
+    url = sys.argv[1]
 
-    if request is not None:
-        if request.status_code >= 400:
-            print(f"Error code: {request.status_code}")
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+
+        if response.status_code >= 400:
+            print(f"Error code: {response.status_code}")
         else:
-            print(request.text)
+            print(response.text)
 
+    except requests.exceptions.RequestException as e:
+        print(f"Error: {e}")
 
 if __name__ == "__main__":
     main()

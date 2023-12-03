@@ -19,9 +19,6 @@ def get_x_request_id(url):
 
 
 def main():
-    if len(sys.argv) != 2:
-        sys.exit(1)
-
     x_request_id = get_x_request_id(sys.argv[1])
 
     if x_request_id is not None:

@@ -22,11 +22,10 @@ def main():
     url = argv[1]
     request = get_request(url)
 
-    if request is not None:
-        if request.status_code >= 400:
-            print(f"Error code: {request.status_code}")
-        else:
-            print(request.text)
+     if request.status_code >= 400:
+         print(f"Error code: {request.status_code}")
+    else:
+         print(request.text)
 
 
 if __name__ == "__main__":

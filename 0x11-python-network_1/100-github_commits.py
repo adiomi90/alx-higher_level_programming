@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
-Python script that shows the last 10 commits of a repository
-in GitHub
+    Python script that shows the last 10 commits of a repository
+    in GitHub
 """
+
 from requests import get, auth
 import sys
 

@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 The script takes a url and an email, sends a
 Post request with email as paramter and

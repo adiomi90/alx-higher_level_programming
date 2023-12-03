@@ -21,11 +21,15 @@ def get_request(url):
 def main():
     url = argv[1]
     request = get_request(url)
+    
+    if request is None:
+        print("Request failed")
+        return
 
     if request.status_code >= 400:
-         print(f"Error code: {request.status_code}")
+        print(f"Error code: {request.status_code}")
     else:
-         print(request.text)
+        print(request.text)
 
 
 if __name__ == "__main__":

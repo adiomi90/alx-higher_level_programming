@@ -3,7 +3,7 @@
 from urllib.request import urlopen, Request
 
 
-def main:
+def main():
 
     request = Request("https://alx-intranet.hbtn.io/status")
     with urlopen(request) as response:

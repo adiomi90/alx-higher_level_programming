@@ -20,7 +20,6 @@ def get_x_request_id(url):
 
 def main():
     if len(sys.argv) != 2:
-        print("Usage: python script <URL>")
         sys.exit(1)
 
     x_request_id = get_x_request_id(sys.argv[1])
@@ -31,4 +30,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

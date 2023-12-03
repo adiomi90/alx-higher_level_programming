@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 python script that takes in a URL, sends a request and
 displays the vlaue of the X-Request-id variable found in the header

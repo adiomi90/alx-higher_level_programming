@@ -18,7 +18,7 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         self.width = value
-        self.width = value
+        self.height = value
 
     def __str__(self):
         """Overloading __str__ method to return [Square] (<id>)

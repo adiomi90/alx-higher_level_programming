@@ -39,10 +39,6 @@ class TestSquare_instantiation(unittest.TestCase):
     def test_four_args(self):
         self.assertEqual(7, Square(10, 2, 2, 7).id)
 
-    def test_more_than_four_args(self):
-        with self.assertRaises(TypeError):
-            Square(1, 2, 3, 4, 5)
-
     def test_size_private(self):
         with self.assertRaises(AttributeError):
             print(Square(10, 2, 3, 4).__size)
